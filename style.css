@@ -1,76 +1,42 @@
-body {
-  font-family: system-ui;
-  background: #f06d06;
-  color: black;
-  text-align: center;
-  
-  .container{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .header{
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    background-image: url("https://images6.alphacoders.com/317/thumb-1920-317170.jpg");
-    background-size: cover;
-    background-attachment: fixed; /* 滾動時背景固定 */
-  }
-  
- .nav{
-  text-align: center;
-  }
-  
-  .content{
-   background-color: pink;
-   display: flex;
-   flex-direction: row; 
-   img {
-   border: 1px solid #ddd;
-   border-radius: 4px;
-   padding: 5px;
-   width: 150px;
-   }
-    
-   display: grid;
-   grid-template-columns: 1fr;
+/* 由上至下解析, 第一個看到的 css rule */
+p {
+  color: gray; /* 分數: 0,0,0,1 */
 }
-  
-@media (min-width: 768px) {
-  .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;    
-  }
+/* 由上至下解析, 以後面解析到的 css rule 為主 */
+p {
+  color: blue; /* 分數: 0,0,0,1 */
 }
 
-@media (min-width: 1200px) {
-  .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;    
-  }  
- }  
-  
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;    
-}
-  
-    
-.box {
-/*   border: 1px solid black; */
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;  
+.highlight {
+  color: green; /* 分數: 0,0,1,0 */
 }
 
-  
-  .footer {
-    background-color: yellow;
-  }
+p.highlight {
+  color: yellow; /* 分數: 0,0,1,1 */
+}
+
+#myText {
+  color: red; /* 分數: 0,1,0,0 */
+}
+
+p#myText {
+  color: purple; /* 分數: 0,1,0,1 */
+}
+
+p#myText.highlight {
+  color: orange; /* 分數: 0,1,1,1 */
+}
+
+p#myText.highlight {
+  color: orange !important; /* 最高優先 */
+}
+
+
+.highlight-div {
+  color: black;  
+}
+
+/* 由上至下解析, 這是解析到的最後一個 css rule */
+.highlight-div p {
+  color: black;  
 }
