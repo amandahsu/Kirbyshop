@@ -3,14 +3,15 @@ body {
   background: #f06d06;
   color: black;
   text-align: center;
-  
-  .container{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .header{
+}
+
+.container{
+background-color: #FFFFFF;
+display: flex;
+flex-direction: column;
+}
+
+.header{
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -23,7 +24,7 @@ body {
   }
   
  .nav{
-  text-align: center;
+    text-align: center;
   }
   
   .content{
@@ -78,4 +79,3 @@ body {
   .footer {
     background-color: yellow;
   }
-}
